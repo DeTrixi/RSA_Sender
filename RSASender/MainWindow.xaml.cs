@@ -20,7 +20,8 @@ namespace RSASender
     /// </summary>
     public partial class MainWindow : Window
     {
-        private RSAEncrypt _rsa;
+        private readonly RSAEncrypt _rsa;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -28,6 +29,11 @@ namespace RSASender
             _rsa.AssignNewKey();
         }
 
+        /// <summary>
+        /// Encrypts the Data
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if (string.IsNullOrEmpty(ModulusText.Text))
@@ -36,14 +42,14 @@ namespace RSASender
             }
             else
             {
+                // updates this Pyblic key so that it get Receivers public key
                 _rsa._publicKey.Modulus = Convert.FromBase64String(ModulusText.Text);
                 _rsa._publicKey.Exponent = Convert.FromBase64String(ExponentText.Text);
-                byte[] encryptedMessege = _rsa.EncryptData(Encoding.UTF8.GetBytes(MessageText.Text));
-                //byte[] encryptedMessege2 = _rsa.EncryptData(Convert.FromBase64String(MessageText.Text));
-                CipherBytesText.Text = Convert.ToBase64String(encryptedMessege);
-                //CipherBytesText.Text = Convert.ToBase64String(encryptedMessege2);
-                //byte[] DecryptedMessage = _rsa.EncryptData(encryptedMessege);
-                //DecryptedText.Text = Convert.ToBase64String(_rsa.DecryptData(encryptedMessege));
+                
+                // Encrypts the message 
+                byte[] encryptedMessage = _rsa.EncryptData(Encoding.UTF8.GetBytes(MessageText.Text));
+                // Displays the text in the window
+                CipherBytesText.Text = Convert.ToBase64String(encryptedMessage);
             }
         }
     }

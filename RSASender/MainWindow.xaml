@@ -12,12 +12,12 @@
         <TextBox Name="ExponentText" Text="AQAB" HorizontalAlignment="Left" Margin="145,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="685"/>
         <Label Content="Modulus:" HorizontalAlignment="Left" Margin="55,123,0,0" VerticalAlignment="Top"/>
         <TextBox Name="ModulusText" HorizontalAlignment="Left" Margin="145,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="685"/>
-        <Label Content="Message to send:" HorizontalAlignment="Left" Margin="35,212,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="MessageText" HorizontalAlignment="Left" Margin="145,219,0,0" Text="Hello Teacher!" TextWrapping="Wrap" VerticalAlignment="Top" Width="685"/>
-        <Button Content="Encrypt" HorizontalAlignment="Left" Margin="240,267,0,0" VerticalAlignment="Top" Width="140" Click="Button_Click"/>
-        <Label Content="Cipher bytes:" HorizontalAlignment="Left" Margin="55,342,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="CipherBytesText" HorizontalAlignment="Left" Margin="150,349,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="680"/>
-        
+        <Label Content="Message to send:" HorizontalAlignment="Left" Margin="35,230,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="MessageText" HorizontalAlignment="Left" Margin="145,237,0,0" Text="Hello Teacher!" TextWrapping="Wrap" VerticalAlignment="Top" Width="685"/>
+        <Button Content="Encrypt" HorizontalAlignment="Left" Margin="240,285,0,0" VerticalAlignment="Top" Width="140" Click="Button_Click"/>
+        <Label Content="Cipher bytes:" HorizontalAlignment="Left" Margin="55,360,0,0" VerticalAlignment="Top"/>
+        <TextBox Name="CipherBytesText" HorizontalAlignment="Left" Margin="150,367,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="680"/>
+
 
     </Grid>
 </Window>
