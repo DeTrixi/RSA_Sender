@@ -20,11 +20,13 @@ namespace RSASender
     /// </summary>
     public partial class MainWindow : Window
     {
+        // creates a object of the rsa class
         private readonly RSAEncrypt _rsa;
 
         delegate void UpdateCipherText(string cipher);
-
+        // Here i create a tcp server
         private readonly TcpServer _tcpServer;
+        // Here i set the port it should be listening to
         const int PortNo = 13005;
         const string ServerIp = "127.0.0.1";
 
@@ -41,11 +43,20 @@ namespace RSASender
             _rsa.AssignNewKey();
         }
 
+        /// <summary>
+        /// This event triggers if message i TcpServer is received
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void _tcpServer_MessageReceived(object sender, string e)
         {
             Dispatcher.BeginInvoke(new UpdateCipherText(UpdateCipher), new object[] {e});
         }
 
+        /// <summary>
+        /// This method is used to update the UI from Tcp server task
+        /// </summary>
+        /// <param name="cipher"></param>
         private void UpdateCipher(string cipher)
         {
             ModulusText.Text = cipher;
